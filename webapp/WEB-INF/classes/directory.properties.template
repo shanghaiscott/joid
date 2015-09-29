@@ -1,0 +1,29 @@
+#Properties for DirectoryStore implementation
+#
+java.naming.factory.initial=com.sun.jndi.ldap.LdapCtxFactory
+#
+java.naming.provider.url=ldap://localhost:636/dc=example,dc=com
+#
+java.naming.security.protocol=ssl
+#
+java.naming.security.authentication=simple
+#
+java.naming.security.principal=cn=Manager,dc=example,dc=com
+#
+java.naming.security.credentials=blahblah
+#
+joid.directory.ou.openid=openid
+#
+joid.directory.ou.association=association
+#
+joid.directory.ou.nonce=nonce
+#
+joid.directory.ou.people=People
+#
+joid.directory.attribute.user=uid
+#
+joid.directory.root=dc=example,dc=com
+#
+joid.directory.attribute.password=userPassword
+# objectClass in LDAP directory to hold the openid
+joid.directory.objectClass.openid=labeledURI

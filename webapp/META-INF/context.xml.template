@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/joid-swd">
+  <!-- JNDI Realm
+  <Realm 
+    className="org.apache.catalina.realm.JNDIRealm"
+    connectionName="cn=Manager,dc=example,dc=com"
+    connectionPassword="password"
+    connectionURL="ldaps://ldap.example.com:636/"
+    alternateURL="ldaps://ldap2.example.com:636/"
+    roleBase="ou=Roles,dc=example,dc=com"
+    roleName="cn" roleSearch="(roleOccupant={0})"
+    userBase="ou=People,dc=example,dc=com" userSearch="(uid={0})"/>
+   -->
+</Context>

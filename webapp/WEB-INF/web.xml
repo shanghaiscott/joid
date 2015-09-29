@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <filter>
+    <description>This filter (for Consumer side) automatically parses OpenID responses and sets the user's identity in the session.</description>
+    <filter-name>OpenIdFilter</filter-name>
+    <filter-class>com.swdouglass.joid.consumer.OpenIdFilter</filter-class>
+    <init-param>
+      <description>Optional. Will store the identity url in a cookie under "openid.identity" if set to true.</description>
+      <param-name>saveInCookie</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <!--init-param>
+      <description>Optional. Domain to store cookie based on RFC 2109. Defaults to current context.</description>
+      <param-name>cookieDomain</param-name>
+      <param-value>www.mydomain.com</param-value>
+    </init-param-->
+    <init-param>
+      <description>Optional. Will not apply filter to the paths set here. Comma delimited.</description>
+      <param-name>ignorePaths</param-name>
+      <param-value>/login,/server,/echo</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <description>This filter (for Server side) takes url's of the
+      form: http://hostname/joid-swd/user/username
+      sto provide an id page for each user.
+    </description>
+    <filter-name>UserUrlFilter</filter-name>
+    <filter-class>com.swdouglass.joid.server.UserUrlFilter</filter-class>
+    <init-param>
+      <description>Required. The jsp page used as the identity page.</description>
+      <param-name>idJsp</param-name>
+      <param-value>/me.jsp</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>OpenIdFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>UserUrlFilter</filter-name>
+    <url-pattern>/user/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>joid</servlet-name>
+    <servlet-class>com.swdouglass.joid.server.OpenIdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>echo</servlet-name>
+    <servlet-class>ecom.swdouglass.joid.server.EchoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.swdouglass.joid.server.OpenIdServlet</servlet-class>
+    <init-param>
+      <description>Change this to your endpoint url.</description>
+      <param-name>endPointURL</param-name>
+      <param-value>http://localhost:8084/joid-swd/login</param-value>
+    </init-param>
+    <init-param>
+      <description>Change this to your login page where the user enters
+        their username and password and/or approves the authentication
+        for the site.
+      </description>
+      <param-name>loginPage</param-name>
+      <param-value>login.jsp</param-value>
+    </init-param>
+    <init-param>
+      <description>Specify the className for your Store implementation.
+      </description>
+      <param-name>storeClassName</param-name>
+      <param-value>com.swdouglass.joid.store.HibernateStoreImpl</param-value>
+    </init-param>
+    <init-param>
+      <description>Specify the className for your UserManager implementation.
+      </description>
+      <param-name>userManagerClassName</param-name>
+      <param-value>com.swdouglass.joid.server.HibernateUserManagerImpl</param-value>
+    </init-param>
+    <init-param>
+      <description>Your reCaptcha Private Key</description>
+      <param-name>captchaPrivateKey</param-name>
+      <param-value>6LcdIQUAAAAAAJl9PLcibcxXLMioQW0jNBkjb0SM</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>joid</servlet-name>
+    <url-pattern>/server</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>echo</servlet-name>
+    <url-pattern>/echo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

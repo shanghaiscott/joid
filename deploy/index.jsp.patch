@@ -1,0 +1,18 @@
+--- webapp/index.jsp.orig	2009-02-15 04:29:21.000000000 -0800
++++ webapp/index.jsp	2009-02-15 04:29:39.000000000 -0800
+@@ -5,7 +5,7 @@
+ <%@ page import="com.swdouglass.joid.util.UrlUtils" %>
+ <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+ <%
+-    String returnTo = UrlUtils.getBaseUrl(request);
++    String returnTo = "http://swdouglass.com/joid-swd"; //UrlUtils.getBaseUrl(request);
+     if (request.getParameter("signin") != null) {
+       try {
+         //FIXME: this example does not perform full normalization as per
+@@ -99,4 +99,4 @@
+       </tr>
+     </table>
+   </body>
+-</html>
+\ No newline at end of file
++</html>
