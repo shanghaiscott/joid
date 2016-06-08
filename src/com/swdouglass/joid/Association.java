@@ -106,9 +106,9 @@ public class Association implements java.io.Serializable {
   }
 
   /**
-   * Returns a string representation of this assocation.
+   * Returns a string representation of this association.
    *
-   * @return a string representation of this assocation.
+   * @return a string representation of this association.
    */
   @Override
   public String toString() {

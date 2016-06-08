@@ -169,7 +169,7 @@ public class AuthenticationResponse extends Response {
    * incoming request.
    *
    * @param req the original request.
-   * @param e any exception that occured while processing <code>req</code>,
+   * @param e any exception that occurred while processing <code>req</code>,
    * may be null.
    *
    * @return the response as a string.

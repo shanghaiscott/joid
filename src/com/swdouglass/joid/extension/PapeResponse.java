@@ -57,7 +57,7 @@ import java.util.Set;
  * </p>
  * 
  * <p>
- * Example of inserting PAPE response to an outgoing reponse:
+ * Example of inserting PAPE response to an outgoing response:
  * <pre>
  * Response resp = request.processUsing(serverInfo);
  * if (resp instanceof AuthenticationResponse) {
