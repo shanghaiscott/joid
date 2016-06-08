@@ -67,7 +67,7 @@ public abstract class Store {
    *
    * @param req the association request.
    * @param crypto the crypto implementation to use.
-   * @return the generated assocation.
+   * @return the generated association.
    *
    * @throws OpenIdException at unrecoverable errors.
    */
@@ -130,7 +130,7 @@ public abstract class Store {
    * Finds an association in the store.
    *
    * @param handle the handle of the association to find.
-   * @return the assocation if found; null otherwise.
+   * @return the association if found; null otherwise.
    *
    * @throws OpenIdException at unrecoverable errors.
    */

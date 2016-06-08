@@ -358,7 +358,7 @@ Recordon & Fitzpatrick                                          [Page 6]
 3.4.  Smart vs Dumb Mode
 
    OpenID Authentication supports both a "smart mode" and "dumb mode" to
-   accomodate Consumers of differing capabilities.  A smart Consumer
+   accommodate Consumers of differing capabilities.  A smart Consumer
    does a little more work at the beginning to save itself work later,
    but requires local caching of state information.  A dumb Consumer is
    completely stateless, but requires extra an HTTP request.
@@ -696,7 +696,7 @@ Recordon & Fitzpatrick                                         [Page 12]
 
    o  openid.signed
 
-         Value: Comma-seperated list of signed fields.
+         Value: Comma-separated list of signed fields.
 
          Note: Fields without the "openid." prefix that the signature
          covers.  For example, "mode,identity,return_to".
@@ -865,7 +865,7 @@ Recordon & Fitzpatrick                                         [Page 15]
 
    o  openid.signed
 
-         Value: Comma-seperated list of signed fields.
+         Value: Comma-separated list of signed fields.
 
          Note: Fields without the "openid." prefix that the signature
          covers.  For example, "mode,identity,return_to".
@@ -1200,7 +1200,7 @@ Appendix B.  Error Responses
    o  If it's a POST request with bad/no arguments, the Identity
       Provider SHALL return a 400 Bad Eequest with the Key-Value
       response format containing a single key "error" with the natural
-      language text.  The Identity Provider can add any additonal keys
+      language text.  The Identity Provider can add any additional keys
       it wishes in this case.
 
 

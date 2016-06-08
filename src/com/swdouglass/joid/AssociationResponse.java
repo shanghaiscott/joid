@@ -61,7 +61,7 @@ public class AssociationResponse extends Response {
   private String errorCode;
 
   /**
-   * Returns the error code (if any) occured while processing this response.
+   * Returns the error code (if any) occurred while processing this response.
    * @return the error code; null if none.
    */
   public String getErrorCode() {
